@@ -1,7 +1,7 @@
 # Discord-Bot-Dashboard
 This Repository is for a Youtube Tutorial
 
-In [this Youtube Video](https://youtube.com) I showed you how to code a Complete Dashboard!
+> **In [this Youtube Video](https://youtube.com) I showed you how to code a Complete Dashboard!**
 
 *This is just an examplme, with really basic css & html styling using bootstrap and jquery!*
 
