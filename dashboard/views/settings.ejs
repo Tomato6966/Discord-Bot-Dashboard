@@ -1,0 +1,86 @@
+<%- include('header'); -%>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">        
+        <link rel="stylesheet" href="/index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+    </head>
+    <body>
+        <section>
+            <center>
+                <h1 style="font-size: 75px;color:#828cff">
+                    <i class="iconify" data-icon="ant-design:dashboard-filled"></i>
+                    <b><%= guild.name %></b> | Dashboard
+                </h1>
+                <div class="form-body" style="margin-top: -2%;">
+                    <div class="form-holder">
+                        <div class="form-content">
+                            <div class="form-items">
+                                <h3> Server Settings</h3>
+                                <p>Change the Server Settings of <%= bot.user.username %> in <%= guild.name %></p>
+                                <form method="POST">
+                                    <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#828cff">Prefix:</h5>
+                                    <p style="font-style: italic;" class="disabled">The prefix that is added to discord messages in order to invoke commands.</p>
+                                    <input style="margin-top: -10px;" type="text" class="form-control" name="prefix" value="<%= bot.settings.get(guild.id, 'prefix') %>" placeholder="Your Prefix">
+                                    
+                                    
+                                    <br><br>
+                                    <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#828cff">Hello Message:</h5>
+                                    <p style="font-style: italic;" class="disabled">The Message to reply with</p>
+                                    <input style="margin-top: -10px;" type="text" class="form-control" name="hellomsg" value="<%= bot.settings.get(guild.id, 'hellomsg') %>" placeholder="hellomsg">
+                                    
+
+
+                                    <br><br>
+                                    <h5 style="margin-bottom: 0.5rem; margin-top: 10px;color:#828cff">Roles:</h5>
+                                    <p style="font-style: italic;" class="disabled">Sample Roles Selector!</p>
+                                    <select 
+                                        class="form-control selectpicker"
+                                        multiple  
+                                        data-width="100%"
+                                        data-live-search="true" 
+                                        aria-label="Roles"
+                                        name="roles"
+                                    >
+                                        <% guild.roles.cache.filter(role=>!role.managed).sort((a, b) => b.rawPosition - a.rawPosition).forEach((role, i) => { %>
+                                            <option value="<%= role.id%>" 
+                                                <%= bot.settings.get(guild.id, "roles").includes(role.id) ? "selected" : "" %>> @<%= role.name%>
+                                            </option>
+                                        <% }) %>
+                                    </select>
+    
+                                    <button type="submit" class="btn btn-success text-white" style="font-size: 40px;">
+                                        <i class="iconify" data-icon="cil:save"></i> Save Settings
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </section>     
+         <section>
+            <div class="card-footer" style="margin-top:15%;text-align: center;color: #828cff;">
+              <hr style="width: 75%;background-color: #FFFFFF!important;color: #FFFFFF!important;border: 5px solid #FFFFFF!important;border-radius:25px;margin-left: 12%;">
+              <h4 style="margin-top:5%;">
+                <img src="<%= bot.user.displayAvatarURL({size: 4096}) %>" style="width: 4%;margin-top: -0.5%;"> <span style="font-size: 40px;"><%= bot.user.username %></span>
+              </h4>
+              <h5 style="text-align: center;">
+                <a href="https://discord.gg/milrato" target="_blank" style="font-size: 12px; color: #888a9b!important;text-decoration: none;">&copy; Copyright Milrato | All rights served.</a><br><br>
+                <a href="https://discord.gg/milrato" target="_blank" style="font-size: 20px; color: #828cff!important;text-decoration: none;">Developed by <code>Tomato#6966</code> | [Github]</a>
+              </h5>
+            </div>
+          </section>
+    
+    </body>
+</html>
+
+

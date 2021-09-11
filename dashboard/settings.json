@@ -1,0 +1,12 @@
+{
+    "website": {
+        "support": "https://discord.gg/milrato",
+        "domain" : "https://Dashboardexample.oxytomato.repl.co"
+    },
+    "config": {
+        "port": 80,
+        "callback": "https://Dashboardexample.oxytomato.repl.co/callback",
+        "clientID": "886133247401136208",
+        "secret": ".env File / VARIABLE"
+    }
+}
