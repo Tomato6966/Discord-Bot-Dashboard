@@ -9,9 +9,9 @@ In [this Youtube Video](https://youtube.com) I showed you how to code a Complete
 
 Fast and easy to setup, as well as expand / smooth out!
 
-[Enjoy and join my Discord Server](https://discord.gg/milrato)
+## [Enjoy and join my Discord Server](https://discord.gg/milrato)
 
+> [Replit Fork](https://replit.com/@OxyTomato/Dashboardexample)
 
-[Replit Fork](https://replit.com/@OxyTomato/Dashboardexample)
 
 *If you decide to use this Repository, please credit me!*
